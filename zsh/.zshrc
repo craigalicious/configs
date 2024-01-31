@@ -22,3 +22,19 @@ source $ZSH/oh-my-zsh.sh
 # Fix omz slow pasting
 # https://github.com/zsh-users/zsh-syntax-highlighting/issues/295#issuecomment-214581607
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
+# replace folder name with %~ to include full path, or %n~ to include n depth
+# https://stackoverflow.com/questions/34623956/how-to-get-absolute-path-on-a-zsh-prompt
+PROMPT=${PROMPT/\%c/\%3~}
+
+# fix my expected ll alias
+alias ll='ls -la'
+
+# source bash aliases
+source $HOME/.bash_aliases
+
+# source environment variables
+source $HOME/.bash_env
+
+# source docker env
+# source ~/github/FlightSystems/docker_fun.sh 
