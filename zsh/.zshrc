@@ -30,11 +30,10 @@ PROMPT=${PROMPT/\%c/\%3~}
 # fix my expected ll alias
 alias ll='ls -la'
 
-# source bash aliases
-source $HOME/.bash_aliases
-
 # source environment variables
-source $HOME/.bash_env
+if [ -f "$HOME/.zshenv" ]; then
+    source "$HOME/.zshenv"
+fi
 
 # source docker env
 # source ~/github/FlightSystems/docker_fun.sh 
