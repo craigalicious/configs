@@ -36,5 +36,5 @@ if [ -f "$HOME/.zshenv" ]; then
 fi
 
 # source docker env
-source ~/github/FlightSystems/docker_fun.sh
+# source ~/github/FlightSystems/docker_fun.sh
 
