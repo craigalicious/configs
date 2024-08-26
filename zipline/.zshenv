@@ -29,3 +29,9 @@ else
   export ETH=$ETH0
   export STLINK=$STLINK0
 fi
+
+# Aug25 Auto-Baud testing
+export STLINK_TAIL=$STLINK
+export STLINK_HOVER=$STLINK
+export STLINK_SERVO_WING=003200343431511531343632
+
