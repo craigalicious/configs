@@ -38,3 +38,9 @@ fi
 # source docker env
 # source ~/github/FlightSystems/docker_fun.sh
 
+
+# Added by FlightSystems bootstrap
+export PATH=$HOME/.local/bin:$PATH
+
+# Added by FlightSystems bootstrap
+eval "$(direnv hook zsh)"

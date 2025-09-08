@@ -6,8 +6,9 @@ export SERVO_ROLL_PORT=50057
 export SERVO_TILT_PORT=50059
 
 # Home office
-export ETH0=enx4865ee1317de
-export ETH1=enxa0cec8024af2
+export ETH0=enx4865ee1317de # VAVA USBC Hub
+export ETH1=enxa0cec8024af2 # USB Eth adapter
+export ETH4=enx803f5d08e5ca # WavLink dock??? (not link-local)
 export STLINK0=0036004F3331510633323639
 export STLINK1=001100174D46501420383832
 export STLINK2=0054003D3431511837393330
@@ -23,7 +24,8 @@ if [[ "$(hostname)" == "craigr-p16s" ]]; then
   export ETH=$ETH2
   export STLINK=$STLINK3
 elif [[ "$(hostname)" == "craigr-p620" ]]; then
-  export ETH=$ETH1
+  # export ETH=$ETH1
+  export ETH=$ETH0 # TEMPORARY default to VAVA USBC Hub
   export STLINK=$STLINK1
 else
   export ETH=$ETH0
