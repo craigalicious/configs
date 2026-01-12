@@ -8,7 +8,7 @@ export SERVO_TILT_PORT=50059
 # Home office
 export ETH0=enx4865ee1317de # VAVA USBC Hub
 export ETH1=enxa0cec8024af2 # USB Eth adapter
-export ETH4=enx803f5d08e5ca # WavLink dock??? (not link-local)
+export ETH4=enx803f5d08e5ca # WavLink dock, "DisplayLink Ehternet"
 export STLINK0=0036004F3331510633323639
 export STLINK1=001100174D46501420383832
 export STLINK2=0054003D3431511837393330
