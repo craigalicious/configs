@@ -40,7 +40,7 @@ fi
 
 # Codex alias, make some options the default
 codex() {
-  command codex --search -a untrusted "$@"
+  command codex --search -a untrusted --full-auto "$@"
 }
 
 # Added by FlightSystems bootstrap
