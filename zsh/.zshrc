@@ -38,6 +38,10 @@ fi
 # source docker env
 # source ~/github/FlightSystems/docker_fun.sh
 
+# Codex alias, make some options the default
+codex() {
+  command codex --search -a untrusted "$@"
+}
 
 # Added by FlightSystems bootstrap
 export PATH=$HOME/.local/bin:$PATH
