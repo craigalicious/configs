@@ -43,6 +43,9 @@ codex() {
   command codex --search -a untrusted --full-auto "$@"
 }
 
+# Prefer zip_ipc from current FlightSystems
+alias zip_ipc="/home/craig.rohe/github/FlightSystems/.environment/pigweed-venv/bin/zip_ipc"
+
 # Added by FlightSystems bootstrap
 export PATH=$HOME/.local/bin:$PATH
 
