@@ -38,9 +38,29 @@ fi
 # source docker env
 # source ~/github/FlightSystems/docker_fun.sh
 
-# Codex alias, make some options the default
+# Codex aliases. Varying levels of autonomy vs risk.
+# -s workspace-write
+#   - Codex can read broadly, and write in the workspace plus any --add-dir paths.
+#   - Grep/search/read files is generally fine.
+#   - Running Python/scripts is generally fine if they only touch the repo, /tmp, and other allowed dirs.
+#   - If a command needs to modify arbitrary places on your machine, open GUIs, or access blocked paths, it will fail instead of prompting when paired with -a never.
 codex() {
-  command codex --search -a untrusted --full-auto "$@"
+  command codex \
+    --search \
+    -a on-request \
+    -s workspace-write \
+    --add-dir /tmp \
+    --add-dir "$HOME/.aws" \
+    --add-dir "$HOME/.cache/bazel" \
+    --add-dir "$HOME/.cache" \
+    "$@"
+}
+#  -s danger-full-access
+#   - Codex can run commands directly on your host with essentially no filesystem sandbox.
+#   - It can modify files outside the repo: home dir, git config, ssh files, dotfiles, system-accessible paths, etc.
+#   - Much more convenient, but mistakes are real mistakes on your machine.
+codex-unsafe() {
+  command codex --search -s danger-full-access "$@"
 }
 
 # Prefer zip_ipc from current FlightSystems
