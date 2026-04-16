@@ -44,7 +44,7 @@ fi
 #   - Grep/search/read files is generally fine.
 #   - Running Python/scripts is generally fine if they only touch the repo, /tmp, and other allowed dirs.
 #   - If a command needs to modify arbitrary places on your machine, open GUIs, or access blocked paths, it will fail instead of prompting when paired with -a never.
-codex() {
+codex-safe() {
   command codex \
     --search \
     -a on-request \
@@ -71,3 +71,9 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Added by FlightSystems bootstrap
 eval "$(direnv hook zsh)"
+
+# Add Rust tooling when installed locally so repo hooks like rustfmt can run.
+[[ -d "$HOME/.cargo/bin" ]] && export PATH="$HOME/.cargo/bin:$PATH"
+
+# Zipline env (added by cloud -> build_tools/setup-environment)
+source /home/craig.rohe/.config/zipline/env
